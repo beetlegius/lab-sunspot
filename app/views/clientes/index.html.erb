@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Clientes</h1>
+
+<%= form_for :q, url: clientes_path, method: :get, remote: true do |f| %>
+  <%= f.text_field :codigo, placeholder: 'Código', autofocus: true %>
+  <%= f.text_field :nombre_completo, placeholder: 'Nombre completo' %>
+  <%= f.text_field :documento, placeholder: 'Documento' %>
+  <%= f.submit 'Search' %>
+<% end %>
+
+<%= paginate @clientes %>
+
+<table id="clientes">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Nombre completo</th>
+      <th>Documento</th>
+      <th>¿Presente?</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <%= content_tag :tbody, render(@clientes) %>
+</table>
+
+<%= paginate @clientes %>
+
+<br>
+
+<%= link_to 'New Cliente', new_cliente_path %>

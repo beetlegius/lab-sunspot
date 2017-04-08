@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fullname: MyString
+  from: 2017-04-07
+  to: 2017-04-07
+  age: 1
+
+two:
+  fullname: MyString
+  from: 2017-04-07
+  to: 2017-04-07
+  age: 1

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movimientos</h1>
+
+<%= form_for :q, url: request.path, method: :get do |f| %>
+  <%= f.text_field :name %>
+  <%= f.number_field :ammount %>
+  <%= f.submit 'Search' %>
+<% end %>
+
+<%= paginate @movimientos %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ammount</th>
+      <th>Cliente</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movimientos.each do |movimiento| %>
+      <tr>
+        <td><%= movimiento.name %></td>
+        <td><%= number_to_currency movimiento.ammount %></td>
+        <td><%= movimiento.cliente.fullname %></td>
+        <td><%= link_to 'Show', movimiento %></td>
+        <td><%= link_to 'Edit', edit_movement_path(movimiento) %></td>
+        <td><%= link_to 'Destroy', movimiento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @movimientos %>
+
+<br>
+
+<%= link_to 'New Movimiento', new_movement_path %>
