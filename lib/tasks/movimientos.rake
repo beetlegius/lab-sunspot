@@ -9,7 +9,7 @@ task movimientos: :environment do
         esta_confirmado: true,
         motivo: ['Cambio de cliente', 'Derogación de autoridad', nil, nil, nil].sample,
         tipo_operacion: ['ingreso_de_valores', 'egreso_de_valores', 'pago_de_fichas', 'venta_de_fichas'].sample,
-        observaciones: ['Esta vez te la dejo pasar, forro', nil, nil, nil, nil, nil, nil, nil].sample,
+        observaciones: ['Esta vez te la dejo pasar', nil, nil, nil, nil, nil, nil, nil].sample,
         receptor: clientes.sample
       puts movimiento.hora
     end

@@ -13,7 +13,7 @@ nacimientos = (50.years.ago.to_date..20.years.ago.to_date).to_a
 nombres = Lipsum.paragraphs[2].to_s.split(" ")
 tipos_documento = ['dni', 'ru', 'pasaporte']
 
-casino = Casino.find_or_create_by nombre: "H2C"
+casino = Casino.find_or_create_by nombre: "Prueba"
 
 150.times do
   cliente = casino.clientes.create! nombre: nombres.sample,
